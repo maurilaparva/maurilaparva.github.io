@@ -24,4 +24,6 @@ latest_posts:
 
 I'm an incoming Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
 
-I received my B.S. and M.S. in Computer Science at the [University of Minnesota](https://twin-cities.umn.edu/), with the advisement of [Qianwen Wang](https://qianwen.info/). Previously, I was an intern at [Mayo Clinic](https://www.mayoclinic.org/) and at [Boston Scientific](https://www.bostonscientific.com/en-US/home.html).
+My research interests lie in how information granularity shapes human-AI interaction, and in building interfaces that align AI transparency mechanisms with target user behaviors.
+
+I received my B.S. and M.S. in Computer Science at the [University of Minnesota](https://twin-cities.umn.edu/), under the advisement of [Qianwen Wang](https://qianwen.info/) as a member of the Visual Intelligence Lab. Previously, I was an intern at [Mayo Clinic](https://www.mayoclinic.org/) and at [Boston Scientific](https://www.bostonscientific.com/en-US/home.html), where I worked on machine learning applications in healthcare.
