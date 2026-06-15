@@ -22,6 +22,9 @@ latest_posts:
   enabled: false
 ---
 
+I'm an incoming Ph.D. student in the Department of Computer Science at the University of Maryland College Park, where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab] (https://fig-x.github.io/).
+
+I received my B.S. and M.S. in Computer Science at the University of Minnesota, with the advisement of Prof. Qianwen Wang. Previously, I was an undergraduate intern at Mayo Clinic and at Boston Scientific.
 Check 1. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
