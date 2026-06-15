@@ -4,6 +4,53 @@
 
 @use "variables" as v;
 
+/* ── News section ─────────────────────────────────────────────────────────── */
+
+.news {
+  margin-top: 0.5rem;
+
+  .news-list {
+    padding-right: 0.5rem;
+  }
+
+  .news-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  time.news-date {
+    flex: 0 0 5.5rem;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  .news-content {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    a.news-title {
+      color: var(--global-text-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+/* ── Publications section ─────────────────────────────────────────────────── */
+
 .publications {
   margin-top: 1rem;
 
@@ -24,13 +71,16 @@
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-text-color-light);
     border-top: 1px solid var(--global-divider-color);
-    padding-top: 0.25rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.4rem;
-    font-size: 1rem;
+    padding-top: 0.2rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    font-weight: normal;
     text-align: right;
+    letter-spacing: 0.05em;
   }
 
   ol.bibliography {
@@ -39,10 +89,27 @@
     margin-top: 0;
 
     li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0;
+      padding: 0.6rem 0.4rem;
+      border-radius: 4px;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.025);
+      }
 
       .preview {
         display: inline-block;
+        width: 100%;
+
+        img {
+          width: 100%;
+          transition: opacity 0.15s ease;
+        }
+
+        &:hover img {
+          opacity: 0.85;
+        }
       }
 
       .abbr {
@@ -70,21 +137,31 @@
       }
 
       .title {
-        font-weight: bolder;
+        font-weight: 600;
+        font-size: 0.97rem;
+        line-height: 1.4;
+        margin-bottom: 0.15rem;
       }
 
       .author {
+        font-size: 0.88rem;
+        color: var(--global-text-color-light);
+        line-height: 1.4;
+
         a {
+          color: var(--global-text-color-light);
           border-bottom: 1px dashed var(--global-theme-color);
 
           &:hover {
+            color: var(--global-theme-color);
             border-bottom-style: solid;
             text-decoration: none;
           }
         }
 
         > em {
-          border-bottom: 1px solid;
+          color: var(--global-text-color);
+          border-bottom: 1px solid var(--global-text-color);
           font-style: normal;
         }
 
@@ -140,10 +217,6 @@
         max-height: 0px;
         overflow: hidden;
         text-align: justify;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
         transition: all 0.15s ease;
 
         p {
@@ -160,10 +233,6 @@
 
       .hidden.open {
         max-height: 100em;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
         transition: all 0.15s ease;
       }
 
@@ -175,6 +244,7 @@
         border-color: var(--global-text-color);
       }
     }
+
     div.award.hidden {
       border: dashed 1px var(--global-bg-color);
     }

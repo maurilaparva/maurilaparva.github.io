@@ -9,12 +9,8 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
-
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --group_by year --order descending --query @*[selected=true]* %}
 
 </div>
