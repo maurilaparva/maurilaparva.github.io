@@ -126,5 +126,14 @@
         </span>
       {% endif %}
     </div>
+    <!-- Venue -->
+    {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
+    {% if entry.abbr %}
+      <div class="venue">{{ entry.abbr }}</div>
+    {% elsif proceedings contains entry.type and entry.booktitle %}
+      <div class="venue">{{ entry.booktitle }}</div>
+    {% elsif entry.journal %}
+      <div class="venue">{{ entry.journal }}</div>
+    {% endif %}
   </div>
 </div>
