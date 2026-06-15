@@ -4,6 +4,10 @@
 
 @use "variables" as v;
 
+body {
+  font-family: "Lora", Georgia, serif;
+}
+
 p,
 h1,
 h2,
@@ -17,6 +21,10 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+}
+
+.post-title {
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 hr {

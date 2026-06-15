@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle:
 
 profile:
   align: right
@@ -11,7 +11,7 @@ profile:
   more_info:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -22,11 +22,6 @@ latest_posts:
   enabled: false
 ---
 
-I'm an incoming Ph.D. student in the Department of Computer Science at the University of Maryland College Park, where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab] (https://fig-x.github.io/).
+I'm an incoming Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
 
-I received my B.S. and M.S. in Computer Science at the University of Minnesota, with the advisement of Prof. Qianwen Wang. Previously, I was an undergraduate intern at Mayo Clinic and at Boston Scientific.
-Check 1. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I received my B.S. and M.S. in Computer Science at the [University of Minnesota](https://twin-cities.umn.edu/), with the advisement of [Qianwen Wang](https://qianwen.info/). Previously, I was an intern at [Mayo Clinic](https://www.mayoclinic.org/) and at [Boston Scientific](https://www.bostonscientific.com/en-US/home.html).
