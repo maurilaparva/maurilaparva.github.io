@@ -1,45 +1,24 @@
 ---
 ---
-<div class="row">
-  {% if site.enable_publication_thumbnails %}
-    <div class="col col-sm-2 abbr">
-      {% if entry.preview %}
-        {% if entry.pdf %}
-          {% if entry.pdf contains '://' %}
-            {% assign pdf_url = entry.pdf %}
-          {% else %}
-            {% assign pdf_url = entry.pdf | prepend: '/assets/pdf/' | relative_url %}
-          {% endif %}
-          <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">
-        {% endif %}
-        {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
-        {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/' %}
-          {%
-            include figure.liquid
-            loading="eager"
-            path=entry_path
-            sizes = "200px"
-            class="preview z-depth-1 rounded"
-            zoomable=false
-            avoid_scaling=true
-            alt=entry.preview
-          %}
-        {% endif %}
-        {% if entry.pdf %}
-          </a>
-        {% endif %}
-      {% endif %}
-    </div>
-  {% endif %}
+<div class="bib-entry">
+  <!-- Year gutter -->
+  <div class="bib-year">{{ entry.year }}</div>
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
-    <!-- Title -->
+  <div id="{{ entry.key }}" class="bib-body">
+    <!-- Title, linked to the best available landing page -->
+    {%- if entry.html -%}
+      {%- assign title_url = entry.html -%}
+    {%- elsif entry.doi -%}
+      {%- assign title_url = entry.doi | prepend: 'https://doi.org/' -%}
+    {%- elsif entry.arxiv -%}
+      {%- assign title_url = entry.arxiv | prepend: 'https://arxiv.org/abs/' -%}
+    {%- else -%}
+      {%- assign title_url = nil -%}
+    {%- endif -%}
     <div class="title">
-      {%- if entry.html -%}
-        <a href="{{ entry.html }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
+      {%- if title_url -%}
+        <a href="{{ title_url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
       {%- else -%}
         {{ entry.title }}
       {%- endif -%}
@@ -140,6 +119,29 @@
       <div class="venue">{{ entry.booktitle }}</div>
     {% elsif entry.journal %}
       <div class="venue">{{ entry.journal }}</div>
+    {% endif %}
+
+    <!-- Links -->
+    {% if entry.pdf or entry.arxiv or entry.doi or entry.code %}
+      <div class="bib-links">
+        {% if entry.pdf %}
+          {% if entry.pdf contains '://' %}
+            {% assign pdf_url = entry.pdf %}
+          {% else %}
+            {% assign pdf_url = entry.pdf | prepend: '/assets/pdf/' | relative_url %}
+          {% endif %}
+          <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">PDF</a>
+        {% endif %}
+        {% if entry.arxiv %}
+          <a href="https://arxiv.org/abs/{{ entry.arxiv }}" target="_blank" rel="noopener noreferrer">arXiv</a>
+        {% endif %}
+        {% if entry.doi %}
+          <a href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>
+        {% endif %}
+        {% if entry.code %}
+          <a href="{{ entry.code }}" target="_blank" rel="noopener noreferrer">Code</a>
+        {% endif %}
+      </div>
     {% endif %}
   </div>
 </div>

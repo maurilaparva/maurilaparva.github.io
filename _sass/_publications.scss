@@ -17,20 +17,14 @@
     display: flex;
     align-items: baseline;
     gap: 1.25rem;
-    padding: 0.55rem 0;
-    border-top: 1px solid var(--global-divider-color);
-
-    &:first-child {
-      border-top: none;
-    }
+    padding: 0.4rem 0;
   }
 
   time.news-date {
-    flex: 0 0 5.5rem;
+    flex: 0 0 4.5rem;
     color: var(--global-text-color-light);
     font-size: 0.8rem;
-    font-style: italic;
-    letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
   }
 
   .news-content {
@@ -89,49 +83,38 @@
 
     li {
       margin-bottom: 0;
-      padding: 0.6rem 0.4rem;
-      border-radius: 4px;
-      transition: background-color 0.15s ease;
+      padding: 0.55rem 0;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.025);
+      // Year in a left gutter, entry body alongside — as on the CV
+      .bib-entry {
+        display: flex;
+        align-items: baseline;
+        gap: 1.25rem;
       }
 
-      .preview {
-        display: inline-block;
-        width: 100%;
-
-        img {
-          width: 100%;
-          transition: opacity 0.15s ease;
-        }
-
-        &:hover img {
-          opacity: 0.85;
-        }
+      .bib-year {
+        flex: 0 0 4.5rem;
+        font-size: 0.8rem;
+        color: var(--global-text-color-light);
+        font-variant-numeric: tabular-nums;
       }
 
-      .abbr {
-        margin-bottom: 0.5rem;
+      .bib-body {
+        flex: 1;
+        min-width: 0;
+      }
 
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+      .bib-links {
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
 
-          a {
-            color: white;
+        a {
+          margin-right: 0.75rem;
+          color: var(--global-theme-color);
 
-            &:hover {
-              text-decoration: none;
-            }
+          &:hover {
+            text-decoration: underline;
           }
-        }
-
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
         }
       }
 
@@ -140,12 +123,20 @@
         font-size: 0.97rem;
         line-height: 1.4;
         margin-bottom: 0.15rem;
+
+        a {
+          color: var(--global-text-color);
+
+          &:hover {
+            color: var(--global-theme-color);
+          }
+        }
       }
 
       .venue {
         font-size: 0.82rem;
         font-style: italic;
-        color: var(--global-theme-color);
+        color: var(--global-text-color);
         margin-top: 0.1rem;
       }
 

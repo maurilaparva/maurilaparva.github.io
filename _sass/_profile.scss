@@ -1,0 +1,93 @@
+/*******************************************************************************
+ * Profile header and link pills (about page)
+ *
+ * Mirrors the CV: name set large, contact line directly beneath, portrait
+ * aligned to the right of the block.
+ ******************************************************************************/
+
+@use "variables" as v;
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.profile-intro {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.profile-position {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profile-affiliation {
+  margin: 0.1rem 0 0;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+}
+
+.profile-portrait {
+  flex: 0 0 auto;
+  width: 165px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--global-text-color);
+
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .profile-links {
+    justify-content: center;
+  }
+
+  .profile-portrait {
+    width: 140px;
+  }
+}

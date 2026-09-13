@@ -1,17 +1,16 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle:
+
+position_title: Ph.D. Student in Computer Science
+affiliation: University of Maryland, College Park
 
 profile:
-  align: right
   image: me_picture.jpg
   image_circular: false # crops the image to make it circular
-  more_info:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -22,8 +21,8 @@ latest_posts:
   enabled: false
 ---
 
-I'm an incoming Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
+I'm a first-year Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
 
-My research interests lie in how information granularity shapes human-AI interaction, and in building interfaces that align AI transparency mechanisms with target user behaviors.
+My research interests lie in how human-AI decision-making is influenced by uncertainty, time, and stress, and in building interfaces that align proper AI usage with target user behavior.
 
 I received my B.S. and M.S. in Computer Science at the [University of Minnesota](https://twin-cities.umn.edu/), under the advisement of [Qianwen Wang](https://qianwen.info/) as a member of the Visual Intelligence Lab. Previously, I was an intern at [Mayo Clinic](https://www.mayoclinic.org/) and at [Boston Scientific](https://www.bostonscientific.com/en-US/home.html), where I worked on machine learning applications in healthcare.
