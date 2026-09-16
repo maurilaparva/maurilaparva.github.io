@@ -15,10 +15,15 @@
     -->
     {% if site.imagemagick.enabled %}
       {% unless include.avoid_scaling %}
+        {% comment %} Version the generated variants by the source image so replacing it in place busts browser caches {% endcomment %}
+        {% assign variant_query = '' %}
+        {% if include.cache_bust %}
+          {% assign variant_query = include.path | bust_file_cache | split: '?' | last | prepend: '?' %}
+        {% endif %}
         <source
           class="responsive-img-srcset"
           {% if ext == 'gif' or ext == 'jpeg' or ext == 'jpg' or ext == 'png' or ext == 'tiff' %}
-            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
+            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp{{ variant_query }} {{ i }}w,{% endfor %}"
             type="image/webp"
           {% else %}
             srcset="{{ include.path | relative_url }}"

@@ -21,7 +21,7 @@ latest_posts:
   enabled: false
 ---
 
-I'm a first-year Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'll be working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
+I'm a first-year Ph.D. student in the Department of Computer Science at the [University of Maryland College Park](https://umd.edu/), where I'm working with [Fumeng Yang](https://www.fmyang.com/) at the [FIGX Lab](https://fig-x.github.io/).
 
 My research interests lie in how human-AI decision-making is influenced by uncertainty, time, and stress, and in building interfaces that align proper AI usage with target user behavior.
 
