@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://maurilaparva.github.io/sitemap.xml
+Sitemap: https://mivillavicencio.com/sitemap.xml
