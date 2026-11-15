@@ -89,14 +89,22 @@
       .bib-entry {
         display: flex;
         align-items: baseline;
-        gap: 1.25rem;
+        gap: 1.5rem;
       }
 
-      .bib-year {
-        flex: 0 0 4.5rem;
-        font-size: 0.8rem;
-        color: var(--global-text-color-light);
-        font-variant-numeric: tabular-nums;
+      // Paper figure thumbnail in the left gutter
+      .bib-preview {
+        flex: 0 0 200px; // same width as the portrait column above
+        align-self: flex-start;
+        margin-top: 0.3rem;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border: 1px solid var(--global-divider-color);
+          border-radius: 0.25rem;
+        }
       }
 
       .bib-body {
@@ -254,4 +262,17 @@
 .citation,
 .citation-number {
   color: var(--global-theme-color);
+}
+
+@media (max-width: 575.98px) {
+  .publications ol.bibliography li .bib-entry {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .publications ol.bibliography li .bib-preview {
+    flex: none;
+    width: 100%;
+    max-width: 20rem;
+  }
 }

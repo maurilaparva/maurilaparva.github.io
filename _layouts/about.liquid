@@ -2,42 +2,44 @@
 layout: default
 ---
 <div class="post">
-  <header class="profile-header">
-    <div class="profile-intro">
-      <h1 class="profile-name">
-        {% if site.title == 'blank' %}
-          {{ site.first_name }} {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      {% if page.position_title %}
-        <p class="profile-position">{{ page.position_title }}</p>
-      {% endif %}
-      {% if page.affiliation %}
-        <p class="profile-affiliation">{{ page.affiliation }}</p>
-      {% endif %}
-      {% include profile_links.liquid %}
-    </div>
-
-    {% if page.profile and page.profile.image %}
-      <div class="profile-portrait">
-        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-        {% if page.profile.image_circular %}
-          {% assign profile_image_class = 'rounded-circle' %}
-        {% else %}
-          {% assign profile_image_class = 'rounded' %}
-        {% endif %}
-        {%
-          include figure.liquid loading="eager" path=profile_image_path class=profile_image_class
-          sizes="165px" alt=page.profile.image cache_bust=true
-        %}
-      </div>
-    {% endif %}
-  </header>
-
   <article>
-    <div class="clearfix">{{ content }}</div>
+    <div class="profile-layout">
+      <!-- Left column: portrait, then name, position, affiliation and links -->
+      <header class="profile-sidebar">
+        {% if page.profile and page.profile.image %}
+          <div class="profile-portrait">
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'rounded' %}
+            {% endif %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class
+              sizes="200px" alt=page.profile.image cache_bust=true
+            %}
+          </div>
+        {% endif %}
+
+        <h1 class="profile-name">
+          {% if site.title == 'blank' %}
+            {{ site.first_name }} {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        {% if page.position_title %}
+          <p class="profile-position">{{ page.position_title }}</p>
+        {% endif %}
+        {% if page.affiliation %}
+          <p class="profile-affiliation">{{ page.affiliation }}</p>
+        {% endif %}
+        {% include profile_links.liquid %}
+      </header>
+
+      <!-- Right column: description -->
+      <div class="profile-bio clearfix">{{ content }}</div>
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

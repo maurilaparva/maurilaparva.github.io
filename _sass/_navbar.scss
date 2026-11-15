@@ -1,54 +1,54 @@
 /*******************************************************************************
- * Top navigation — a quiet row of links above the content column
+ * Top navigation — small-caps wordmark left, small-caps nav right,
+ * hairline rule below (Pencil Grid)
  ******************************************************************************/
 
 @use "variables" as v;
 
 .site-header {
-  background-color: var(--global-bg-color);
-  border-bottom: 1px solid var(--global-divider-color);
+  background-color: transparent;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 
   .container {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 0.75rem;
   }
 }
 
 .site-brand {
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--global-text-color);
+  text-decoration: none;
 
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-text-color);
     text-decoration: none;
   }
 }
 
 .site-nav {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-left: auto;
 }
 
 .site-nav-link {
-  font-size: 0.9rem;
   color: var(--global-text-color-light);
+  text-decoration: none;
 
-  &:hover {
-    color: var(--global-theme-color);
-    text-decoration: none;
-  }
-
+  &:hover,
   &.active {
-    color: var(--global-theme-color);
-    font-weight: 600;
+    color: var(--global-text-color);
+    text-decoration: none;
   }
 }
 
@@ -59,7 +59,7 @@
   color: var(--global-text-color-light);
 
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-text-color);
   }
 }
 
@@ -69,6 +69,6 @@
   }
 
   .site-nav {
-    gap: 1.1rem;
+    gap: 1.25rem;
   }
 }

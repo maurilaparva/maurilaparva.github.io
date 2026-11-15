@@ -6,6 +6,11 @@
 
 :root {
   color-scheme: light;
+
+  /* Type: Ysabeau (Christian Thalmann) — display, running text, small caps */
+  --font-display: "Ysabeau", sans-serif;
+  --font-text: "Ysabeau Office", "Ysabeau", sans-serif;
+  --font-caps: "Ysabeau SC", "Ysabeau", sans-serif;
   --global-bg-color: #{v.$white-color};
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #{v.$black-color};

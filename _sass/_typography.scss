@@ -5,7 +5,17 @@
 @use "variables" as v;
 
 body {
-  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
 }
 
 p,
@@ -24,15 +34,17 @@ strong {
 }
 
 .post-title {
-  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
 }
 
+// Section labels in lowercase
 h2.section-heading {
-  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
   color: var(--global-text-color);
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;

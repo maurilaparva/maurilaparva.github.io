@@ -1,8 +1,17 @@
 ---
 ---
 <div class="bib-entry">
-  <!-- Year gutter -->
-  <div class="bib-year">{{ entry.year }}</div>
+  <!-- Preview image gutter (the year already appears in the venue line) -->
+  <div class="bib-preview">
+    {% if entry.preview %}
+      {% if entry.preview contains '://' %}
+        {% assign preview_url = entry.preview %}
+      {% else %}
+        {% assign preview_url = entry.preview | prepend: '/assets/img/publication_preview/' | relative_url %}
+      {% endif %}
+      <img src="{{ preview_url }}" alt="Preview figure for {{ entry.title }}" loading="lazy">
+    {% endif %}
+  </div>
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="bib-body">

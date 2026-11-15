@@ -58,7 +58,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 756px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -457,7 +457,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Ysabeau+Office:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Ysabeau+SC:wght@400;500&display=swap"
   highlightjs:
     integrity:
       css:

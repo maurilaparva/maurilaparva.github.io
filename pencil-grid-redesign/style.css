@@ -1,0 +1,248 @@
+/* =========================================================
+   Pencil Grid — mivillavicencio.com
+   After Agnes Martin (pastel bands, graphite grid) and
+   Karl Gerstner / Wim Crouwel (asymmetric modular grid).
+   ========================================================= */
+
+:root {
+  /* Paper + ink */
+  --paper: #F5F4EF;
+  --paper-raised: #FBFAF6;
+  --ink: #22211F;
+  --ink-soft: #3A3935;
+  --muted: #5E5C57;      /* 6:1 on --paper, passes AA */
+  --rule: #D8D5CC;
+  --link-underline: #B9B5AB;
+
+  /* Pastel palette: "Rose, butter, powder" (default) */
+  --p1: #EFD3CC;  /* rose */
+  --p2: #F0E5BF;  /* butter */
+  --p3: #CFDDE8;  /* powder */
+  /* Alternates tried on the canvas:
+     Powder, sage, lilac: #CFDDE8 #D5E0CF #DDD6EA
+     Dusk:                #E9CFD6 #DDD6EA #F1DFC6 */
+
+  /* Type */
+  --font-display: 'Ysabeau', sans-serif;
+  --font-text: 'Ysabeau Office', 'Ysabeau', sans-serif;
+  --font-caps: 'Ysabeau SC', 'Ysabeau', sans-serif;
+
+  /* Layout */
+  --measure: 1160px;
+  --gutter: 72px;
+  --label-col: 220px;
+  --ruled-line: 32px;   /* spacing of the faint pencil lines on the page */
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  /* faint ruled "pencil lines" across the whole page */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--ruled-line) - 1px),
+    rgba(34, 33, 31, 0.045) calc(var(--ruled-line) - 1px),
+    rgba(34, 33, 31, 0.045) var(--ruled-line)
+  );
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 19px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:hover { text-decoration-color: var(--ink); }
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 32px 0 28px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-caps);
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+.wordmark { text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: 32px; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a[aria-current="page"], .nav a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 56px var(--gutter);
+  padding: 96px 0 104px;
+}
+.hero__text { flex: 999 1 560px; min-width: 0; }
+.hero__name {
+  margin: 0 0 36px;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(52px, 7.6vw, 108px);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+}
+.hero__statement {
+  margin: 0;
+  max-width: 600px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+/* ---------- The "painting" ---------- */
+.study { flex: 1 1 340px; max-width: 380px; margin: 0; }
+.study__canvas {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--paper-raised);
+  box-shadow: 0 1px 0 var(--rule), 0 24px 48px -32px rgba(34, 33, 31, 0.25);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.band {
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--c) var(--l),
+    var(--c) var(--r),
+    transparent 100%
+  );
+}
+.study__grid {
+  position: absolute;
+  inset: 30px;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(to right,  rgba(34,33,31,0.13) 0, rgba(34,33,31,0.13) 1px, transparent 1px, transparent 26px),
+    repeating-linear-gradient(to bottom, rgba(34,33,31,0.13) 0, rgba(34,33,31,0.13) 1px, transparent 1px, transparent 26px);
+}
+.study__caption {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- Catalogue rows (label column + body) ---------- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px var(--gutter);
+  padding: 56px 0 72px;
+  border-top: 1px solid var(--rule);
+}
+.row__label {
+  flex: 0 0 var(--label-col);
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+.row__body { flex: 999 1 560px; min-width: 0; margin: 0; }
+
+/* About */
+.about { display: flex; flex-wrap: wrap; gap: 32px 48px; }
+.portrait {
+  flex: 0 0 200px;
+  width: 200px;
+  height: 248px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.55) contrast(0.96) brightness(1.04);
+}
+.about__text { flex: 999 1 320px; min-width: 0; }
+.about__text p { margin: 0 0 18px; }
+.about__text p:last-child { margin-bottom: 0; }
+
+.smallcaps-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin: 0;
+  font-family: var(--font-caps);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+
+/* News */
+.news { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.news__item { display: flex; flex-wrap: wrap; gap: 4px 32px; }
+.news__date {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--muted);
+}
+.news__text { flex: 999 1 320px; min-width: 0; }
+.swatch { width: 14px; height: 14px; background: var(--c); flex: none; }
+
+/* Publications */
+.pub { display: flex; flex-wrap: wrap; gap: 24px 40px; }
+.pub__thumb {
+  flex: 0 0 150px;
+  height: 112px;
+  background: var(--paper-raised);
+  box-shadow: 0 1px 0 var(--rule);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.pub__text { flex: 999 1 320px; min-width: 0; }
+.pub__title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.25;
+}
+.pub__authors { margin: 0 0 4px; font-size: 17px; }
+.pub__authors strong { font-weight: 500; }
+.pub__venue { margin: 0 0 14px; font-size: 17px; color: var(--muted); }
+
+/* Colophon */
+.colophon { padding: 40px 0 64px; font-size: 15px; color: var(--muted); }
+.colophon .row__label { font-weight: 400; font-size: 15px; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+  .page { padding: 0 22px; }
+  .hero { padding: 56px 0 64px; }
+  .hero__statement { font-size: 23px; }
+  .row { padding: 40px 0 48px; }
+}
