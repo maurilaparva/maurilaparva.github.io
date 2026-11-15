@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mauricio Villavicencio</title>
+  <meta name="description" content="Mauricio Villavicencio — Ph.D. student in Computer Science at the University of Maryland, studying human–AI decision-making under uncertainty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Ysabeau+Office:ital,wght@0,400;0,500;1,400&family=Ysabeau+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <a class="wordmark" href="#top">mauricio villavicencio</a>
+    <nav aria-label="Primary" class="nav">
+      <a href="#about" aria-current="page">about</a>
+      <a href="#news">news</a>
+      <a href="#publications">publications</a>
+      <a href="#"><!-- TODO: CV link -->cv</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__text">
+        <h1 class="hero__name">Mauricio<br>Villavicencio</h1>
+        <p class="hero__statement">studies how uncertainty, time, and stress shape the decisions people make with AI — and designs interfaces that keep that use honest to what people intend.</p>
+      </div>
+      <figure class="study">
+        <div class="study__canvas" aria-hidden="true">
+          <!-- Each band is a pastel wash with feathered edges; --l / --r set where it becomes solid. -->
+          <div class="band" style="--c: var(--p1); --l: 14%; --r: 86%"></div>
+          <div class="band" style="--c: var(--p2); --l: 24%; --r: 76%"></div>
+          <div class="band" style="--c: var(--p3); --l: 8%;  --r: 92%"></div>
+          <div class="band" style="--c: var(--p1); --l: 32%; --r: 68%"></div>
+          <div class="band" style="--c: var(--p2); --l: 18%; --r: 82%"></div>
+          <div class="band" style="--c: var(--p3); --l: 10%; --r: 90%"></div>
+          <div class="band" style="--c: var(--p1); --l: 26%; --r: 74%"></div>
+          <div class="study__grid"></div>
+        </div>
+        <figcaption class="study__caption"><em>Study for an interval</em>, 2026. Pastel bands with soft edges over a graphite grid — certainty, fading out.</figcaption>
+      </figure>
+    </section>
+
+    <section id="about" class="row">
+      <h2 class="row__label">i. about</h2>
+      <div class="row__body about">
+        <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Mauricio Villavicencio" width="200" height="248">
+        <div class="about__text">
+          <p>I’m a first-year Ph.D. student in Computer Science at the University of Maryland, College Park, working with <a href="#">Fumeng Yang</a> in the <a href="#">FIGX Lab</a>.</p>
+          <p>Before Maryland, I completed my B.S. and M.S. at the University of Minnesota, advised by <a href="#">Qianwen Wang</a> in the Visual Intelligence Lab, and interned at Mayo Clinic and Boston Scientific on machine learning for healthcare.</p>
+          <p class="smallcaps-links">
+            <a href="#">email</a><a href="#">cv</a><a href="#">scholar</a><a href="#">github</a><a href="#">linkedin</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="row">
+      <h2 class="row__label">ii. news</h2>
+      <ul class="row__body news">
+        <li class="news__item">
+          <span class="news__date"><span class="swatch" style="--c: var(--p1)" aria-hidden="true"></span>August 2026</span>
+          <span class="news__text">Began my Ph.D. in Computer Science at the University of Maryland.</span>
+        </li>
+        <li class="news__item">
+          <span class="news__date"><span class="swatch" style="--c: var(--p3)" aria-hidden="true"></span>June 2026</span>
+          <span class="news__text">A paper on human-centered LLM uncertainty was accepted to <em>FAccT 2026</em>.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications" class="row">
+      <h2 class="row__label">iii. publications</h2>
+      <div class="row__body">
+        <article class="pub">
+          <div class="pub__thumb" aria-hidden="true">
+            <div class="band" style="--c: var(--p2); --l: 20%; --r: 80%"></div>
+            <div class="band" style="--c: var(--p3); --l: 35%; --r: 65%"></div>
+            <div class="band" style="--c: var(--p1); --l: 10%; --r: 90%"></div>
+          </div>
+          <div class="pub__text">
+            <h3 class="pub__title">Not All Uncertainty Is Equal: How Uncertainty Granularity Shapes Human Verification in LLM-Assisted Decision Making</h3>
+            <p class="pub__authors"><strong>Mauricio Villavicencio</strong>, [CO-AUTHORS]</p>
+            <p class="pub__venue">ACM Conference on Fairness, Accountability, and Transparency (FAccT), 2026</p>
+            <p class="smallcaps-links"><a href="#">paper</a><a href="#">arxiv</a><a href="#">bibtex</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="row colophon">
+    <p class="row__label">colophon</p>
+    <p class="row__body">Set in Ysabeau by Christian Thalmann, a sans serif drawn on Garamond’s bones. Ruled after Karl Gerstner’s grids; coloured after Agnes Martin’s late pastel bands. © 2026, College Park.</p>
+  </footer>
+
+</div>
+</body>
+</html>
